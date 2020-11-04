@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.testmarlerino.view.StartFragment"
+        android:label="StartFragment" >
+        <action
+            android:id="@+id/action_startFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_mainGameFragment"
+            app:destination="@id/mainGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.example.testmarlerino.view.WebViewFragment"
+        android:label="WebViewFragment" />
+    <fragment
+        android:id="@+id/mainGameFragment"
+        android:name="com.example.testmarlerino.view.MainGameFragment"
+        android:label="MainGameFragment" />
+</navigation>

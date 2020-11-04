@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "597651314148",
+    "firebase_url": "https://testmarlerino.firebaseio.com",
+    "project_id": "testmarlerino",
+    "storage_bucket": "testmarlerino.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:597651314148:android:5f59734260c0e9438d23f1",
+        "android_client_info": {
+          "package_name": "com.example.testmarlerino"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "597651314148-ieont4sikm3hqbv1h3n2i286vasodfni.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.testmarlerino",
+            "certificate_hash": "af0a8d214c7e88466ac02739ae61af79a8425af4"
+          }
+        },
+        {
+          "client_id": "597651314148-ko7elb0krftda3ea8tmokt82h9j18771.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiDT_aHaObdpkHNTZUiI-fN2qPxqMKvdc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "597651314148-ko7elb0krftda3ea8tmokt82h9j18771.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

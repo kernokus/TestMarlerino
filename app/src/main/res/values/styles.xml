@@ -1,0 +1,33 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorYellow</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+
+    <style name="mainBtnStyle" parent="Widget.MaterialComponents.Button" >
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="backgroundTint">@color/colorYellow</item>
+<!--        <item name="colorAccent">@color/colorYellow</item>-->
+<!--        <item name="colorPrimary">@color/colorYellow</item>-->
+    </style>
+    
+    
+    <style name="logoTV">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+</resources>
