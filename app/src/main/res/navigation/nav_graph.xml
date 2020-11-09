@@ -8,18 +8,18 @@
         android:name="com.example.testmarlerino.view.StartFragment"
         android:label="StartFragment" >
         <action
-            android:id="@+id/action_startFragment_to_webViewFragment"
-            app:destination="@id/webViewFragment" />
-        <action
             android:id="@+id/action_startFragment_to_mainGameFragment"
             app:destination="@id/mainGameFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/webViewFragment"
-        android:name="com.example.testmarlerino.view.WebViewFragment"
-        android:label="WebViewFragment" />
     <fragment
         android:id="@+id/mainGameFragment"
         android:name="com.example.testmarlerino.view.MainGameFragment"
         android:label="MainGameFragment" />
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.example.testmarlerino.view.WebViewFragment"
+        android:label="WebViewFragment" />
 </navigation>

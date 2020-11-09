@@ -13,14 +13,14 @@ class StartViewModel @ViewModelInject constructor(private val fa:FirebaseAnalyti
     fun addEventGameClick(){
         val bundle = Bundle()
         bundle.putString(FirebaseAnalytics.Param.METHOD, "testMethod")
-        fa.logEvent(FirebaseAnalytics.Event.LOGIN, bundle)
+        fa.logEvent("ClickGame", bundle)
 
     }
 
     fun addEventWebViewClick(){
         val bundle=Bundle()
         bundle.putString("click","clickGotoWebView")
-        fa.logEvent("TestEVENT",bundle)
+        fa.logEvent("TestEVENTWebViewClick",bundle)
     }
 
 

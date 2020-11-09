@@ -20,9 +20,7 @@ import com.example.testmarlerino.R
 import com.example.testmarlerino.viewModel.StartViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_start.*
-import java.security.MessageDigest
-import java.security.NoSuchAlgorithmException
-import java.util.*
+
 
 
 @AndroidEntryPoint
