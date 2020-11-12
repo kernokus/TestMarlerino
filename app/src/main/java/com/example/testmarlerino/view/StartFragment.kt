@@ -1,26 +1,18 @@
 package com.example.testmarlerino.view
 
-import android.annotation.SuppressLint
-import android.content.Context
-import android.content.pm.PackageInfo
-import android.content.pm.PackageManager
-import android.os.Build
 import android.os.Bundle
-import android.util.Base64.encode
-
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.testmarlerino.R
 import com.example.testmarlerino.viewModel.StartViewModel
+import com.facebook.FacebookSdk.setAutoLogAppEventsEnabled
+import com.facebook.appevents.AppEventsLogger
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_start.*
-
 
 
 @AndroidEntryPoint
@@ -32,7 +24,7 @@ class StartFragment:Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_start,container,false)
+        return inflater.inflate(R.layout.fragment_start, container, false)
     }
 
 
@@ -48,6 +40,7 @@ class StartFragment:Fragment() {
         }
 
             //  context?.let { generateSSHKey(it) }
+        logSentFriendRequestEvent()
     }
 
 
@@ -67,5 +60,10 @@ class StartFragment:Fragment() {
 //        }
 //
 //    }
+
+    fun logSentFriendRequestEvent() {
+        //setAutoLogAppEventsEnabled(true)
+        AppEventsLogger.newLogger(context).logEvent("testEvent")
+    }
 
 }

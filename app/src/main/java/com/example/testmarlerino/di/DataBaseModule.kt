@@ -22,7 +22,4 @@ class DataBaseModule {
     @Singleton
     fun provideCatalogDao(appDatabase: AppDatabase) = appDatabase.itemCatalogsDao()
 
-    @Provides
-    @Singleton
-    fun provideUserDao(appDatabase: AppDatabase) = appDatabase.userDao()
 }

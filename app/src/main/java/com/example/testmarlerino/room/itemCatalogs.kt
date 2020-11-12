@@ -9,8 +9,8 @@ class itemCatalogs (@PrimaryKey(autoGenerate = true)
                         @ColumnInfo(name = "id")
                         var id: Long,
                         @ColumnInfo(name = "price")
-                        var price: String,
+                        var likes: String,
                         @ColumnInfo(name = "name")
-                        var name: String,
+                        var tags: String,
                         @ColumnInfo(name = "url")
                         var url: String)

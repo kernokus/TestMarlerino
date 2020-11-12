@@ -8,10 +8,12 @@
 
 
 
-    <string name="facebook_app_id">357907645442901</string>
+
     <string name="marlerino">Marlerino</string>
     <string name="g_r_o_u_p">G r o u p</string>
     <string name="test_task">Test task</string>
 
+    <string name="facebook_app_id">357907645442901</string>
+    <string name="fb_login_protocol_scheme">fb357907645442901</string>
 
 </resources>

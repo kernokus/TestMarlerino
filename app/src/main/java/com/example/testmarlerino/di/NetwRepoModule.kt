@@ -8,7 +8,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(ApplicationComponent::class)
-class NetwModule {
+class NetwRepoModule {
         @Provides
         @Singleton
         fun provideNetworkModule(): NetworkRepo {

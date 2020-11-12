@@ -13,7 +13,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(ApplicationComponent::class)
-class RoomModule {
+class RoomRepoModule {
     @Provides
     @Singleton
      fun provideRoomModule(@ApplicationContext context: Context): RoomRepo {

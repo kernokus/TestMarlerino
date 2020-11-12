@@ -17,9 +17,17 @@
     <fragment
         android:id="@+id/mainGameFragment"
         android:name="com.example.testmarlerino.view.MainGameFragment"
-        android:label="MainGameFragment" />
+        android:label="MainGameFragment" >
+        <action
+            android:id="@+id/action_mainGameFragment_to_additionalInfoFragment"
+            app:destination="@id/additionalInfoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/webViewFragment"
         android:name="com.example.testmarlerino.view.WebViewFragment"
         android:label="WebViewFragment" />
+    <fragment
+        android:id="@+id/additionalInfoFragment"
+        android:name="com.example.testmarlerino.view.AdditionalInfoFragment"
+        android:label="AdditionalInfoFragment" />
 </navigation>

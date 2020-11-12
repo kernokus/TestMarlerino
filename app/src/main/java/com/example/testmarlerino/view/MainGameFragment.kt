@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.testmarlerino.R
@@ -34,7 +35,7 @@ class MainGameFragment:Fragment() {
         super.onViewCreated(view, savedInstanceState)
         gameViewModel.loadCatalog()
         val items: ArrayList<itemCatalogs>? = arrayListOf()
-        rvCatalog.layoutManager= LinearLayoutManager(context)
+        rvCatalog.layoutManager= GridLayoutManager(context,2)
         myAdapter=AdapterPendingCases(items)
         rvCatalog.adapter=myAdapter
         gameViewModel.getCatalog()
@@ -45,7 +46,6 @@ class MainGameFragment:Fragment() {
                     Log.d("onChanged",myAdapter.values.toString())
                 }
             }
-
         })
     }
 
@@ -55,16 +55,11 @@ class MainGameFragment:Fragment() {
         override fun getItemCount(): Int {
             return values!!.size
         }
-
         inner class PendingCasesViewHolder constructor(itemView: View): RecyclerView.ViewHolder(itemView) {
 
             fun bind(item: itemCatalogs) {
-                itemView.priceTV.text=item.price
                 Glide.with(gameViewModel.app).load(item.url).into(itemView.photoItem)
-                itemView.descriptionTV.text=item.name
             }
-
-
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PendingCasesViewHolder {
@@ -73,18 +68,17 @@ class MainGameFragment:Fragment() {
 
         override fun onBindViewHolder(holder: PendingCasesViewHolder, position: Int) {
             values?.get(position)?.let { holder.bind(it) }
+            holder.itemView.setOnClickListener {
+                val bundle1=Bundle()
+                val arrayForBundle: ArrayList<String?> = arrayListOf(values?.get(position)?.url,values?.get(position)?.likes, values?.get(position)?.tags)
+                bundle1.putStringArrayList("key1",arrayForBundle)
+               findNavController().navigate(R.id.additionalInfoFragment,bundle1)
+            }
         }
 
         fun addList(items:List<itemCatalogs>) {
             values?.addAll(items)
             notifyDataSetChanged()
         }
-
-
     }
-
-
-
-
-
 }
