@@ -32,15 +32,16 @@ class StartFragment:Fragment() {
         super.onViewCreated(view, savedInstanceState)
         goToWebViewBtn.setOnClickListener {
             startingViewModel.addEventWebViewClick()
-            findNavController().navigate(R.id.webViewFragment)
+            //findNavController().navigate(R.id.webViewFragment)
         }
         startGameBtn.setOnClickListener {
             startingViewModel.addEventGameClick()
-            findNavController().navigate(R.id.mainGameFragment)
+                findNavController().navigate(R.id.mainGameFragment)
         }
 
             //  context?.let { generateSSHKey(it) }
         logSentFriendRequestEvent()
+        startingViewModel.showFirstPush()
     }
 
 

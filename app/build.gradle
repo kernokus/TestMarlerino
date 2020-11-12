@@ -46,6 +46,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.3'
     implementation 'com.google.firebase:firebase-core:18.0.0'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
+    implementation 'com.google.firebase:firebase-inappmessaging-display:19.0.3'
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -89,9 +90,21 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
 
 
-    def paging_version = "3.0.0-alpha03"
-    implementation "androidx.paging:paging-runtime:$paging_version"
+//    def paging_version = "3.0.0-alpha03"
+//    implementation "androidx.paging:paging-runtime:$paging_version"
+//
+//    implementation "androidx.paging:paging-guava:$paging_version"
 
-    implementation "androidx.paging:paging-guava:$paging_version"
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:26.0.0')
+
+    // Declare the dependencies for the In-App Messaging and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-inappmessaging-display-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    implementation 'com.google.android.gms:play-services-basement:17.5.0'
+
+
 
 }

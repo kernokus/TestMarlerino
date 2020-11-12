@@ -10,6 +10,12 @@ class StartViewModel @ViewModelInject constructor(private val fa:FirebaseAnalyti
 
 
 
+    fun showFirstPush(){
+        val bundle=Bundle()
+        bundle.putString("click","clickStartApp")
+        fa.logEvent("clickStartApp",bundle)
+    }
+
     fun addEventGameClick(){
         val bundle = Bundle()
         bundle.putString(FirebaseAnalytics.Param.METHOD, "testMethod")
