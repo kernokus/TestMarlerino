@@ -13,4 +13,7 @@ class itemCatalogs (@PrimaryKey(autoGenerate = true)
                         @ColumnInfo(name = "name")
                         var tags: String,
                         @ColumnInfo(name = "url")
-                        var url: String)
+                        var url: String,
+                    @ColumnInfo(name = "BigUrl")
+                    var bigUrl: String
+                    )

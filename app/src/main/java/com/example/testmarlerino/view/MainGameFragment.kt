@@ -70,9 +70,9 @@ class MainGameFragment:Fragment() {
             values?.get(position)?.let { holder.bind(it) }
             holder.itemView.setOnClickListener {
                 val bundle1=Bundle()
-                val arrayForBundle: ArrayList<String?> = arrayListOf(values?.get(position)?.url,values?.get(position)?.likes, values?.get(position)?.tags)
+                val arrayForBundle: ArrayList<String?> = arrayListOf(values?.get(position)?.url,values?.get(position)?.likes, values?.get(position)?.tags,values?.get(position)?.bigUrl)
                 bundle1.putStringArrayList("key1",arrayForBundle)
-               findNavController().navigate(R.id.additionalInfoFragment,bundle1)
+                findNavController().navigate(R.id.additionalInfoFragment,bundle1)
             }
         }
 
