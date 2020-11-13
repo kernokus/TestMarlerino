@@ -46,12 +46,14 @@ class WebViewFragment:Fragment() {
         headers["Accept-Language"] = lang // also tried "ru", "ru_RU", "ru;q=0.8,en;q=0.6", etc.
 
 
-       // webView.loadUrl("https://policies.google.com/privacy?hl=$lang&fg=1",headers)
+       //
         if (savedInstanceState != null) {
             webView.restoreState(savedInstanceState)
         }
         else {
-            webView.loadUrl("https://yandex.ru/")
+           //webView.loadUrl("https://yandex.ru/")
+            webView.loadUrl("https://policies.google.com/privacy?hl=$lang&fg=1",headers)
+
         }
 
 
