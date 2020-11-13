@@ -9,7 +9,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.testmarlerino.R
 import com.example.testmarlerino.viewModel.StartViewModel
-import com.facebook.FacebookSdk.setAutoLogAppEventsEnabled
 import com.facebook.appevents.AppEventsLogger
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_start.*
@@ -32,11 +31,11 @@ class StartFragment:Fragment() {
         super.onViewCreated(view, savedInstanceState)
         goToWebViewBtn.setOnClickListener {
             startingViewModel.addEventWebViewClick()
-            //findNavController().navigate(R.id.webViewFragment)
+            findNavController().navigate(R.id.webViewFragment)
         }
         startGameBtn.setOnClickListener {
             startingViewModel.addEventGameClick()
-                findNavController().navigate(R.id.mainGameFragment)
+            findNavController().navigate(R.id.mainGameFragment)
         }
 
             //  context?.let { generateSSHKey(it) }

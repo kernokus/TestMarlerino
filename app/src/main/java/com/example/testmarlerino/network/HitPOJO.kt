@@ -1,4 +1,4 @@
-package com.example.a10augportfolio.network
+package com.example.testmarlerino.network
 
 import com.google.gson.annotations.Expose
 

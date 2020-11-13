@@ -1,7 +1,6 @@
 package com.example.testmarlerino.network
 
 
-import com.example.a10augportfolio.network.catalogItemsPOJO
 import retrofit2.http.GET
 import retrofit2.http.Query
 

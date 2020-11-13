@@ -9,9 +9,8 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.testmarlerino.R
 import kotlinx.android.synthetic.main.fragment_addit_info.*
-import kotlinx.android.synthetic.main.item_catalog.view.*
 
-class AdditionalInfoFragment():Fragment() {
+class AdditionalInfoFragment:Fragment() {
     lateinit var array: ArrayList<String?>
     override fun onCreateView(
         inflater: LayoutInflater,
