@@ -12,6 +12,7 @@ import com.example.testmarlerino.viewModel.StartViewModel
 import com.facebook.appevents.AppEventsLogger
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_start.*
+import splitties.permissions.requestPermission
 
 
 @AndroidEntryPoint
@@ -29,6 +30,7 @@ class StartFragment:Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        startingViewModel.requestPermissionsInFragment(this)
         goToWebViewBtn.setOnClickListener {
             startingViewModel.addEventWebViewClick()
             findNavController().navigate(R.id.webViewFragment)
@@ -37,31 +39,15 @@ class StartFragment:Fragment() {
             startingViewModel.addEventGameClick()
             findNavController().navigate(R.id.mainGameFragment)
         }
-
-            //  context?.let { generateSSHKey(it) }
         logSentFriendRequestEvent()
+
         startingViewModel.showFirstPush()
     }
 
 
-//    @SuppressLint("PackageManagerGetSignatures")
-//    @RequiresApi(Build.VERSION_CODES.O)
-//    fun generateSSHKey(context: Context){
-//        try {
-//            val info = context.packageManager.getPackageInfo(context.packageName, PackageManager.GET_SIGNATURES)
-//            for (signature in info.signatures) {
-//                val md = MessageDigest.getInstance("SHA")
-//                md.update(signature.toByteArray())
-//                val hashKey = String(Base64.getEncoder().encode(md.digest()))
-//                Log.i("AppLog", "key:$hashKey=")
-//            }
-//        } catch (e: Exception) {
-//            Log.e("AppLog", "error:", e)
-//        }
-//
-//    }
 
-    fun logSentFriendRequestEvent() {
+
+    private fun logSentFriendRequestEvent() {
         //setAutoLogAppEventsEnabled(true)
         AppEventsLogger.newLogger(context).logEvent("testEvent")
     }

@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/mainGameFragment"
-        android:name="com.example.testmarlerino.view.MainGameFragment"
+        android:name="com.example.testmarlerino.view.CatalogFragment"
         android:label="MainGameFragment" >
         <action
             android:id="@+id/action_mainGameFragment_to_additionalInfoFragment"

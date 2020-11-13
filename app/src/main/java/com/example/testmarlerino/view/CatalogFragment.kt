@@ -13,15 +13,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.testmarlerino.R
 import com.example.testmarlerino.room.itemCatalogs
-import com.example.testmarlerino.viewModel.GameViewModel
+import com.example.testmarlerino.viewModel.CatalogViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_main_game.*
 import kotlinx.android.synthetic.main.item_catalog.view.*
 
 @AndroidEntryPoint
-class MainGameFragment:Fragment() {
-    private lateinit var myAdapter :AdapterPendingCases
-    private val gameViewModel: GameViewModel by viewModels()
+class CatalogFragment:Fragment() {
+    private lateinit var myAdapter :AdapterCatalog
+    private val catalogViewModel: CatalogViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,13 +33,13 @@ class MainGameFragment:Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        gameViewModel.loadCatalog()
+        catalogViewModel.loadCatalog()
         val items: ArrayList<itemCatalogs>? = arrayListOf()
         rvCatalog.layoutManager= GridLayoutManager(context,2)
-        myAdapter=AdapterPendingCases(items)
+        myAdapter=AdapterCatalog(items)
         rvCatalog.adapter=myAdapter
-        gameViewModel.getCatalog()
-        gameViewModel.catalogLD.observe(viewLifecycleOwner, object : Observer<Collection<itemCatalogs>?> {
+        catalogViewModel.getCatalog()
+        catalogViewModel.catalogLD.observe(viewLifecycleOwner, object : Observer<Collection<itemCatalogs>?> {
             override fun onChanged(t: Collection<itemCatalogs>?) {
                 if (t!=null) {
                     myAdapter.addList(t as List<itemCatalogs>)
@@ -51,19 +51,19 @@ class MainGameFragment:Fragment() {
 
 
 
-    inner class AdapterPendingCases(var values:ArrayList<itemCatalogs>?): RecyclerView.Adapter<AdapterPendingCases.PendingCasesViewHolder>() {
+    inner class AdapterCatalog(var values:ArrayList<itemCatalogs>?): RecyclerView.Adapter<AdapterCatalog.PendingCasesViewHolder>() {
         override fun getItemCount(): Int {
             return values!!.size
         }
         inner class PendingCasesViewHolder constructor(itemView: View): RecyclerView.ViewHolder(itemView) {
 
             fun bind(item: itemCatalogs) {
-                Glide.with(gameViewModel.app).load(item.url).into(itemView.photoItem)
+                Glide.with(catalogViewModel.app).load(item.url).into(itemView.photoItem)
             }
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PendingCasesViewHolder {
-            return PendingCasesViewHolder(LayoutInflater.from(gameViewModel.app).inflate(R.layout.item_catalog, parent, false))}
+            return PendingCasesViewHolder(LayoutInflater.from(catalogViewModel.app).inflate(R.layout.item_catalog, parent, false))}
 
 
         override fun onBindViewHolder(holder: PendingCasesViewHolder, position: Int) {
